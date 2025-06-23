@@ -2,7 +2,6 @@ import { IBook } from './book.interface';
 import { Book } from './book.model';
 
 const createBookIntoDB = async (payload: IBook) => {
-    console.log(payload, 'service');
     if (await Book.isBookExists(payload.isbn)) {
         throw new Error(`A book with ISBN ${payload.isbn} already exists.`);
     }

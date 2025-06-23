@@ -14,10 +14,7 @@ app.use('/api/books', BookRoutes);
 app.use('/api/borrow', BorrowRoutes);
 
 app.get('/', (req: Request, res: Response) => {
-  res.status(200).json({
-    success: true,
-    message: "Welcome to the Library Management System API!"
-  });
+  res.status(200).json("Welcome to the Library Management System API!");
 });
 
 // Global error handler for centralized error processing.

@@ -3,7 +3,6 @@ import { BookService } from './book.service';
 
 const createBook = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    console.log(req.body, "controller");
     const result = await BookService.createBookIntoDB(req.body);
     res.status(201).json({
       success: true,
@@ -18,7 +17,6 @@ const createBook = async (req: Request, res: Response, next: NextFunction) => {
 const getAllBooks = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const result = await BookService.getAllBooksFromDB(req.query);
-    console.log(result, 'getAllBooks');
     
     res.status(200).json({
       success: true,
